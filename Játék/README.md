@@ -3,8 +3,12 @@
 ### Első hét:
 *
 *
+### Második hét:
 *
 *
+### Harmadik hét:
+* Szint/pénz/fegyver szint lenullázása halálkor
+* Ellenfelek/npc/portal meganimálása
 
 
 A játék készÍtője: Szabó László
