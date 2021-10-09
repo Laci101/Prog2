@@ -8,7 +8,10 @@
 *
 ### Harmadik hét:
 * Szint/pénz/fegyver szint lenullázása halálkor
-* Ellenfelek/npc/portal meganimálása
+* Ellenfelek/npc/portal/mimic/láda meganimálása
+* Mimic mechanikájának elkészítése
+* Boss szobájába belépéskor egy fallal való elzárása a kijáratnak majd annak feloldása a boss halálánál
+* Háttérzene (ami nem indul újra ha a kezdő scenere megyünk)
 
 
 A játék készÍtője: Szabó László
