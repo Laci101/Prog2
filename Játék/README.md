@@ -12,6 +12,12 @@
 * Mimic mechanikájának elkészítése
 * Boss szobájába belépéskor egy fallal való elzárása a kijáratnak majd annak feloldása a boss halálánál
 * Háttérzene (ami nem indul újra ha a kezdő scenere megyünk)
+* Karaktermenü szépítése
+
+### Negyedik hét:
+* Szint/pénz/fegyver szint lenullázása a játék indításakor
+* HP bar átdolgozása hp szívekre
+* Quit button létrehozása a karaktermenüben
 
 
 A játék készÍtője: Szabó László
