@@ -18,6 +18,7 @@
 * Szint/pénz/fegyver szint lenullázása a játék indításakor
 * HP bar átdolgozása hp szívekre
 * Quit button létrehozása a karaktermenüben
+* Minimap(végleges?)
 
 
 A játék készÍtője: Szabó László
