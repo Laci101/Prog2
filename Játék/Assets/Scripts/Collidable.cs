@@ -35,5 +35,4 @@ public class Collidable : MonoBehaviour
         Debug.Log("No oncollide" + this.name);
     }
 
-
 }

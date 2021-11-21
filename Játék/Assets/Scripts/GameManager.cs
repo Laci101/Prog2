@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        
         instance = this;
         SceneManager.sceneLoaded += LoadState;
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -29,15 +31,17 @@ public class GameManager : MonoBehaviour
     public List<Sprite> weaponSprites;
     public List<int> weaponPrices;
     public List<int> xpTable;
+    
 
     //References
     public Player player;
     public Weapon weapon;
     public FloatingTextManager floatingTextManager;
-    public RectTransform hitpointBar;
+    //public RectTransform hitpointBar;
     public GameObject hud;
     public GameObject menu;
     public Animator deathMenuAnim;
+    public Animator menuAnim;
 
 
     //Logic
@@ -67,14 +71,6 @@ public class GameManager : MonoBehaviour
 
         return false;
     }
-
-    //Hp bar
-    public void OnHitpointChange()
-    {
-        float ratio = (float)player.hitpoint / (float)player.maxHitpoint;
-        hitpointBar.localScale = new Vector3(1, ratio, 1);
-    }
-
 
     //Xp
     public int GetCurrentLevel()
@@ -144,8 +140,34 @@ public class GameManager : MonoBehaviour
     public void Respawn()
     {
         deathMenuAnim.SetTrigger("Hide");
+        menuAnim.SetTrigger("hide");
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        weapon.SetWeaponLevel(0);
+        experience = 0;
+        pesos = 0;
+        player.hitpoint = 10;
+        player.maxHitpoint = 10;
         player.Respawn();
+    }
+
+    public void Spawn()
+    {
+        //menuAnim.SetTrigger("hide");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        weapon.SetWeaponLevel(0);
+        experience = 0;
+        pesos = 0;
+        player.hitpoint = 10;
+        player.maxHitpoint = 10;
+        player.Respawn();
+    }
+
+    public void Start(){
+        weapon.SetWeaponLevel(0);
+        experience = 0;
+        pesos = 0;
+        player.hitpoint = 10;
+        player.maxHitpoint = 10;
     }
 
     public void LoadState(Scene scene, LoadSceneMode mode)
@@ -170,4 +192,44 @@ public class GameManager : MonoBehaviour
        weapon.SetWeaponLevel(int.Parse(data[3]));
     }
 
+    public Image[] hearts;
+    public Sprite fullHeart;
+    public Sprite emptyHeart;
+
+    public void OnHitpointChange()
+    {
+        if(player.hitpoint > player.maxHitpoint){
+            player.hitpoint = player.maxHitpoint;
+        }
+
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < player.hitpoint)
+            {
+                hearts[i].sprite = fullHeart;
+            }
+            else{
+                hearts[i].sprite = emptyHeart;
+            }
+            if(i < player.maxHitpoint){
+                hearts[i].enabled = true;
+            }else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+    }
+
+    void Update(){
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if(i < player.maxHitpoint){
+                hearts[i].enabled = true;
+            }else
+            {
+                hearts[i].enabled = false;
+            }
+        }
+
+    }
 }

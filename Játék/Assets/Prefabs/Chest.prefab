@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1190588202088325353}
   - component: {fileID: 1190588202088325355}
   - component: {fileID: 1190588202088325354}
+  - component: {fileID: -2207483219874939221}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -71,9 +72,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1730474475
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3628468241054914511, guid: fb796eadf98a0192d800bb55f0943375, type: 3}
+  m_Sprite: {fileID: -2285114424382770006, guid: fb796eadf98a0192d800bb55f0943375, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.15}
+    oldSize: {x: 0.17204301, y: 0.17204301}
     newSize: {x: 0.16, y: 0.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -138,3 +139,22 @@ MonoBehaviour:
     maxNormalAngle: 0
   emptyChest: {fileID: -3513202607186615407, guid: fb796eadf98a0192d800bb55f0943375, type: 3}
   pesosAmount: 5
+--- !u!95 &-2207483219874939221
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1190588202088325334}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9396e0b0cb13ea840ac1927b66c40bee, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

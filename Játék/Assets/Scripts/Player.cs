@@ -5,11 +5,13 @@ using UnityEngine;
 public class Player : Mover
 {
     private SpriteRenderer spriteRenderer;
+    private Animator anim;
     private bool isAlive = true;
 
     protected override void Start(){
         base.Start();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
         
     }
 
@@ -41,6 +43,19 @@ public class Player : Mover
     public void SwapSprite(int skinId)
     {
         spriteRenderer.sprite = GameManager.instance.playerSprites[skinId];
+        
+    }
+
+    public void SwapAnim(int skinId)
+    {
+        if(skinId == 0)
+        {
+            anim.SetTrigger("knight");
+        }
+        else
+        {
+            anim.SetTrigger("wizard");
+        }
     }
 
     public void OnLevelUp()
@@ -74,6 +89,6 @@ public class Player : Mover
         isAlive = true;
         lastImmune = Time.time;
         pushDirection = Vector3.zero;
-        //SetLevel(1);
+        
     }
 }
